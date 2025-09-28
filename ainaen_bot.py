@@ -26,6 +26,9 @@ async def nn_help(interaction: discord.Interaction):
 @bot.event
 async def on_ready():
     print(f"✅ logged in as {bot.user}")
+    await bot.change_presence(
+        activity=discord.Game(name="type /nn for command list")
+    )
     try:
         synced = await bot.tree.sync()
         print(f"✅ synced {len(synced)} slash command(s)")
