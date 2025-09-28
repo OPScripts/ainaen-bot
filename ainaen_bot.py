@@ -14,10 +14,10 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 async def nn_help(interaction: discord.Interaction):
     await interaction.response.send_message(
         "**🧠 cruel the best guild – command list:**\n"
-        "- `!nn enh for <class name>` – enhancement builds\n"
+        "- `!nn enh for <full class name>` – enhancement builds\n"
         "- `!nn resetlist` – shows daily and weekly main todo list.\n"
         "- `!nn potionguide` – shows basic potions guide.\n"
-        "- `!nn cruel` – dont prompt it. only for softies.\n"
+        "- `!nn bossguide` – guide for daily boss / ultra boss (work in progress).\n"
         "*Help us improve — share your suggestions with <@1052580900497534999>!*",
         ephemeral=True
     )
