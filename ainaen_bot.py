@@ -1914,6 +1914,9 @@ async def enhancement(ctx, *args):
         )
         return
 
+    if message == "bossguide":
+        await ctx.send("📖 Boss Guide: https://crueltest.vercel.app")
+        return
 
     if message == "resetlist":
         embed = dailies_embed(include_weekly=True)
