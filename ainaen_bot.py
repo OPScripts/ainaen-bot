@@ -85,11 +85,11 @@ enhancements = {
         "cape": "Vainglory"
     },
     "alpha omega": {
-        "purpose": "Stun PvP",
+        "purpose": "Damage",
         "class": "Luck",
-        "weapon": "Valiance",
-        "helm": "Vim",
-        "cape": "Vainglory"
+        "weapon": "Smite (Mid Game), Valiance, Praxis (Ultra Darkon Killer)",
+        "helm": "Forge, Vim (Ultra Darkon Killer)",
+        "cape": "Lament, Vainglory, Avarice (Ultra Darkon Killer)"
     },
     "alpha pirate": {
         "purpose": "Soloer (DPS)",
