@@ -120,17 +120,17 @@ enhancements = {
         "cape": "Vainglory"
     },
     "arachnomancer": {
-        "purpose": "Bossfighter (Dodge), Hybrid Support (Debuffs)",
+        "purpose": "Dodge/Support Class",
         "class": "Luck",
-        "weapon": "Ravenous, Dauntless",
+        "weapon": "Ravenous, Dauntless, Lacerate, Praxis",
         "helm": "Forge",
-        "cape": "Vainglory"
+        "cape": "Vainglory, Forge"
     },
     "archfiend": {
-        "purpose": "Farming, Bossfighter (DPS)",
+        "purpose": "Farming/Support, Bossfighter (DPS)",
         "class": "Luck",
-        "weapon": "Lacerate, Dauntless",
-        "helm": "Anima",
+        "weapon": "Ravenous, Dauntless, Valiance",
+        "helm": "Anima, Forge",
         "cape": "Vainglory"
     },
     "legendary archfiend": {
@@ -141,11 +141,11 @@ enhancements = {
         "cape": "Vainglory"
     },
     "archpaladin": {
-        "purpose": "Defensive Tank, Hybrid Support (Debuffs/Heals)",
+        "purpose": "Damage Support (Debuffs/Heals)",
         "class": "Luck",
         "weapon": "Awe Blast, Valiance",
-        "helm": "Forge",
-        "cape": "Vainglory, Lament"
+        "helm": "Forge, Vim",
+        "cape": "Lament"
     },
     "assassin": {
         "purpose": "Soloer (Dodge)",
@@ -507,9 +507,9 @@ enhancements = {
     "quantum chronomancer": {
         "purpose": "Hybrid Support (Buffs/Nukes)",
         "class": "Luck",
-        "weapon": "Ravenous, Dauntless",
+        "weapon": "Valiance, Praxis, Ravenous",
         "helm": "Forge",
-        "cape": "Vainglory"
+        "cape": "Lament, Vainglory"
     },
     "corrupted chronomancer": {
         "purpose": "Bossfighter (Nuke)",
@@ -517,6 +517,13 @@ enhancements = {
         "weapon": "Dauntless, Lacerate",
         "helm": "Forge",
         "cape": "Penitence"
+    },
+    "phantom chronomancer": {
+        "purpose": "Support Damage Class",
+        "class": "Wizard",
+        "weapon": "Ravenous, Elysium",
+        "helm": "Forge, Pneuma, Examen",
+        "cape": "Vainglory, Lament"
     },
     "overworld chronomancer": {
         "purpose": "Bossfighter (Nuke)",
@@ -780,9 +787,9 @@ enhancements = {
     "eternal inversionist": {
         "purpose": "Farming",
         "class": "Luck",
-        "weapon": "Dauntless",
-        "helm": "Anima",
-        "cape": "Vainglory"
+        "weapon": "Dauntless, Ravenous, Lacerate",
+        "helm": "Anima, Vim",
+        "cape": "Vainglory, Avarice"
     },
     "evolved clawsuit": {
         "purpose": "Bossfighter (DPS)",
@@ -914,8 +921,8 @@ enhancements = {
         "purpose": "Farming",
         "class": "Luck",
         "weapon": "Dauntless",
-        "helm": "Vim",
-        "cape": "Lament"
+        "helm": "Anima",
+        "cape": "Lament, Vainglory"
     },
     "hobo highlord": {
         "purpose": "N/A: Better suited for collecting only",
@@ -976,9 +983,9 @@ enhancements = {
     "legion doomknight": {
         "purpose": "Bossfighter (Anti-Decay), Bossfighter (DPS)",
         "class": "Luck",
-        "weapon": "Dauntless, Valiance",
+        "weapon": "Dauntless, Valiance, Ravenous",
         "helm": "Forge, Anima",
-        "cape": "Lament"
+        "cape": "Vainglory"
     },
     "glacial berserker test": {
         "purpose": "N/A: Better suited for collecting only",
@@ -1048,7 +1055,7 @@ enhancements = {
         "class": "Luck",
         "weapon": "Arcana's Concerto, Awe Blast",
         "helm": "Forge",
-        "cape": "Absolution"
+        "cape": "Absolution, Penitence"
     },
     "lycan": {
         "purpose": "Stun PvP",
@@ -1102,7 +1109,7 @@ enhancements = {
     "necrotic chronomancer": {
         "purpose": "Farming",
         "class": "Luck",
-        "weapon": "Arcana's Concerto, Dauntless",
+        "weapon": "Dauntless, Ravenous",
         "helm": "Anima",
         "cape": "Vainglory"
     },
@@ -1151,7 +1158,7 @@ enhancements = {
     "sentinel": {
         "purpose": "Soloer (DPS), Anti-Dodge PvP",
         "class": "Luck",
-        "weapon": "Ravenous",
+        "weapon": "Ravenous, Dauntless",
         "helm": "Anima",
         "cape": "Vainglory"
     },
@@ -1275,16 +1282,16 @@ enhancements = {
         "cape": "Lament"
     },
     "verus doomknight": {
-        "purpose": "Defensive Tank, DPS Support (Debuffs)",
+        "purpose": "Damage Support Class",
         "class": "Luck",
-        "weapon": "Dauntless, Valiance",
+        "weapon": "Dauntless, Valiance, Ravenous",
         "helm": "Anima",
         "cape": "Vainglory"
     },
     "void highlord": {
-        "purpose": "Soloer (DPS), Bossfighter (DPS)",
+        "purpose": "Heavy Damage Class",
         "class": "Luck",
-        "weapon": "Smite, Dauntless",
+        "weapon": "Smite, Dauntless, Ravenous",
         "helm": "Anima",
         "cape": "Vainglory"
     },
@@ -1303,11 +1310,11 @@ enhancements = {
         "cape": "Gay"
     },
     "arcana invoker": {
-        "purpose": "Generalist",
+        "purpose": "Dodge/Heavy Damage Class",
         "class": "Wizard",
         "weapon": "Elysium, Ravenous, Valiance",
-        "helm": "Pneuma",
-        "cape": "Vainglory, Lament"
+        "helm": "Examen",
+        "cape": "Vainglory, Absolution"
     },
     "arcane dark caster": {
         "purpose": "Soloer (DPS)",
@@ -1499,7 +1506,7 @@ enhancements = {
         "cape": "Lament"
     },
     "dragon of time": {
-        "purpose": "Farming, Bossfighter (DoT)",
+        "purpose": "Heavy Damage Class",
         "class": "Wizard",
         "weapon": "Elysium",
         "helm": "Pneuma, Wizard",
@@ -1583,16 +1590,16 @@ enhancements = {
         "cape": "Vainglory"
     },
     "infinity knight": {
-        "purpose": "Bossfighter (DoT)",
+        "purpose": "Heavy Damage Class",
         "class": "Wizard",
-        "weapon": "Elysium",
+        "weapon": "Ravenous, Elysium",
         "helm": "Pneuma",
         "cape": "Vainglory"
     },
     "interstellar knight": {
         "purpose": "Bossfighter (DoT)",
         "class": "Wizard",
-        "weapon": "Elysium",
+        "weapon": "Ravenous, Elysium",
         "helm": "Pneuma",
         "cape": "Vainglory"
     },
@@ -1605,10 +1612,10 @@ enhancements = {
     },
     "stonecrusher": {
         "purpose": "Support (Buffs/Debuffs/Heals)",
-        "class": "Wizard",
-        "weapon": "Arcana's Concerto, Awe Blast",
-        "helm": "Forge",
-        "cape": "Absolution"
+        "class": "Wizard, Fighter (Highest Healing)",
+        "weapon": "Valiance (Highest Healing/Full Damage), Awe Blast",
+        "helm": "Anima (Highest Healing), Pneuma (Full Damage)",
+        "cape": "Absolution (Highest Healing), Vainglory (Full Damage)"
     },
     "legion paladin": {
         "purpose": "Bossfighter (DPS), Support (Buffs/Debuffs/Heals)",
@@ -1618,11 +1625,11 @@ enhancements = {
         "cape": "Vainglory"
     },
     "legion revenant": {
-        "purpose": "Generalist, Hybrid Support (Debuffs)",
+        "purpose": "Generalist, Damage Support (Debuffs)",
         "class": "Wizard",
-        "weapon": "Valiance, Praxis",
+        "weapon": "Valiance, Ravenous",
         "helm": "Pneuma, Wizard",
-        "cape": "Vainglory, Avarice"
+        "cape": "Avarice, Vainglory"
     },
     "obsidian paladin chronomancer": {
         "purpose": "Support (Buffs/Debuffs/Heals)",
@@ -1648,8 +1655,8 @@ enhancements = {
     "lightcaster": {
         "purpose": "Bossfighter (Glass Cannon), Hybrid Support (Buffs/Nukes/Heals)",
         "class": "Wizard",
-        "weapon": "Valiance, Praxis",
-        "helm": "Pneuma, Wizard",
+        "weapon": "Ravenous, Praxis",
+        "helm": "Pneuma, Wizard, Forge (Safe Ultra)",
         "cape": "Vainglory, Lament"
     },
     "lightmage": {
@@ -1744,13 +1751,13 @@ enhancements = {
         "cape": "Lament"
     },
     "shaman": {
-        "purpose": "Generalist, Hybrid Support (Buffs/Heals)",
+        "purpose": "Generalist, Heavy Damage Class",
         "class": "Wizard",
         "weapon": "Valiance, Elysium",
         "helm": "Examen, Pneuma",
-        "cape": "Avarice, Vainglory"
+        "cape": "Lament"
     },
-    "sovereign of storms (option 1": {
+    "sovereign of storms": {
         "purpose": "Farming, Soloer (DPS)",
         "class": "Wizard",
         "weapon": "Elysium",
@@ -1784,6 +1791,20 @@ enhancements = {
         "weapon": "Valiance",
         "helm": "Pneuma",
         "cape": "Vainglory"
+    },
+    "hollowborn vindicator": {
+        "purpose": "Heavy Damage Class",
+        "class": "Luck",
+        "weapon": "Valiance/Ravenous (Farming), Dauntless",
+        "helm": "Forge",
+        "cape": "Lament, Vainglory"
+    },
+    "lich": {
+        "purpose": "Heavy Damage Class",
+        "class": "Luck",
+        "weapon": "Ravenous, Elysium (Mana Sustain)",
+        "helm": "Examen, Forge",
+        "cape": "Lament, Vainglory"
     },
 }
 
