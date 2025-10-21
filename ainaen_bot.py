@@ -108,6 +108,13 @@ enhancements = {
         "helm": "Vim",
         "cape": "Lament"
     },
+    "king's echo": {
+        "purpose": "Offensive Tank, Bossfighter (DPS)",
+        "class": "Luck",
+        "weapon": "Ravenous",
+        "helm": "Examen",
+        "cape": "Vainglory"
+    },
     "antique hunter": {
         "purpose": "All-Rounder DPS, Anti-Dodge PvP",
         "class": "Luck",
