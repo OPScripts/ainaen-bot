@@ -38,7 +38,7 @@ async def enhancement_slash(interaction: discord.Interaction, class_name: str):
         embed.add_field(name="Weapon", value=data['weapon'], inline=False)
         embed.add_field(name="Helm", value=data['helm'], inline=False)
         embed.add_field(name="Cape", value=data['cape'], inline=False)
-        embed.set_footer(text="Feel free to change up the enhancements to suit your needs")
+        embed.set_footer(text="**Outdated?** Ask **MOD or **ADMIN** to update using /enhupdate")
         embed.set_thumbnail(url="https://i.imgur.com/T9lX2Nm.png")
     else:
         embed = discord.Embed(
