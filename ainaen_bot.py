@@ -14,13 +14,126 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 async def nn_help(interaction: discord.Interaction):
     await interaction.response.send_message(
         "**🧠 cruel the best guild – command list:**\n"
-        "- `!nn enh for <full class name>` – enhancement builds\n"
+        "- `/enhancement <class>` – enhancement builds\n"
         "- `!nn resetlist` – shows daily and weekly main todo list.\n"
         "- `!nn potionguide` – shows basic potions guide.\n"
         "- `!nn bossguide` – guide for daily boss / ultra boss (work in progress).\n"
         "*Help us improve — share your suggestions with <@1052580900497534999>!*",
         ephemeral=True
     )
+
+@bot.tree.command(name="enhancement", description="Show enhancement builds for a class")
+@app_commands.describe(class_name="The class name to look up")
+async def enhancement_slash(interaction: discord.Interaction, class_name: str):
+    class_name_lower = class_name.lower().strip()
+    data = enhancements.get(class_name_lower)
+    
+    if data:
+        embed = discord.Embed(
+            title=f"**Enhancements for {class_name_lower.title()}**",
+            color=discord.Color.from_rgb(128, 0, 0)
+        )
+        embed.add_field(name="Purpose", value=data['purpose'], inline=False)
+        embed.add_field(name="Class", value=data['class'], inline=False)
+        embed.add_field(name="Weapon", value=data['weapon'], inline=False)
+        embed.add_field(name="Helm", value=data['helm'], inline=False)
+        embed.add_field(name="Cape", value=data['cape'], inline=False)
+        embed.set_footer(text="Feel free to change up the enhancements to suit your needs")
+        embed.set_thumbnail(url="https://i.imgur.com/T9lX2Nm.png")
+    else:
+        embed = discord.Embed(
+            title="Error",
+            description=f"Sorry, I couldn't find enhancements for `{class_name_lower}`. You dumbass bitch.",
+            color=discord.Color.red()
+        )
+        embed.set_thumbnail(url="https://i.imgur.com/T9lX2Nm.png")
+    
+    await interaction.response.send_message(embed=embed)
+
+@enhancement_slash.autocomplete('class_name')
+async def class_autocomplete(
+    interaction: discord.Interaction,
+    current: str,
+) -> list[app_commands.Choice[str]]:
+    current_lower = current.lower()
+    matches = [
+        app_commands.Choice(name=class_name.title(), value=class_name)
+        for class_name in enhancements.keys()
+        if current_lower in class_name.lower()
+    ]
+    return matches[:25]
+
+@bot.tree.command(name="enhupdate", description="Update enhancement details for a class (Admin only)")
+@app_commands.describe(
+    class_name="The class to update",
+    purpose="New purpose value",
+    class_type="New class enhancement type (Luck, Fighter, Wizard, etc.)",
+    weapon="New weapon enhancement",
+    helm="New helm enhancement",
+    cape="New cape enhancement"
+)
+@app_commands.checks.has_permissions(moderate_members=True)
+async def enhupdate_slash(
+    interaction: discord.Interaction, 
+    class_name: str,
+    purpose: str,
+    class_type: str,
+    weapon: str,
+    helm: str,
+    cape: str
+):
+    class_name_lower = class_name.lower().strip()
+    
+    if class_name_lower not in enhancements:
+        await interaction.response.send_message(
+            f"❌ Class `{class_name_lower}` not found in enhancements database.",
+            ephemeral=True
+        )
+        return
+    
+    enhancements[class_name_lower] = {
+        "purpose": purpose,
+        "class": class_type,
+        "weapon": weapon,
+        "helm": helm,
+        "cape": cape
+    }
+    
+    embed = discord.Embed(
+        title=f"✅ Updated: {class_name_lower.title()}",
+        description=f"Enhancement details updated successfully!",
+        color=discord.Color.green()
+    )
+    embed.add_field(name="Purpose", value=purpose, inline=False)
+    embed.add_field(name="Class", value=class_type, inline=False)
+    embed.add_field(name="Weapon", value=weapon, inline=False)
+    embed.add_field(name="Helm", value=helm, inline=False)
+    embed.add_field(name="Cape", value=cape, inline=False)
+    embed.set_thumbnail(url="https://i.imgur.com/T9lX2Nm.png")
+    embed.set_footer(text="Changes are temporary and will reset on bot restart")
+    
+    await interaction.response.send_message(embed=embed, ephemeral=True)
+
+@enhupdate_slash.autocomplete('class_name')
+async def enhupdate_class_autocomplete(
+    interaction: discord.Interaction,
+    current: str,
+) -> list[app_commands.Choice[str]]:
+    current_lower = current.lower()
+    matches = [
+        app_commands.Choice(name=class_name.title(), value=class_name)
+        for class_name in enhancements.keys()
+        if current_lower in class_name.lower()
+    ]
+    return matches[:25]
+
+@enhupdate_slash.error
+async def enhupdate_error(interaction: discord.Interaction, error: app_commands.AppCommandError):
+    if isinstance(error, app_commands.MissingPermissions):
+        await interaction.response.send_message(
+            "You don't have permission to use this command. Requires 'Timeout Members' permission.",
+            ephemeral=True
+        )
 
 # 🔄 Sync slash command
 @bot.event
@@ -1963,29 +2076,12 @@ async def enhancement(ctx, *args):
         await ctx.send("Please read and use help??? wtf man: `/nn` to see a list of commands")
         return
 
-    class_name = message.replace("enh for", "").strip()
-    data = enhancements.get(class_name)
-
-    if data:
-        embed = discord.Embed(
-            title=f"**Enhancements for {class_name.title()}**",
-            color=discord.Color.from_rgb(128, 0, 0)
-        )
-        embed.add_field(name="Purpose", value=data['purpose'], inline=False)
-        embed.add_field(name="Class", value=data['class'], inline=False)
-        embed.add_field(name="Weapon", value=data['weapon'], inline=False)
-        embed.add_field(name="Helm", value=data['helm'], inline=False)
-        embed.add_field(name="Cape", value=data['cape'], inline=False)
-        embed.set_footer(text="Feel free to change up the enhancements to suit your needs")
-        embed.set_thumbnail(url="https://i.imgur.com/T9lX2Nm.png")  # Add the logo here
-    else:
-        embed = discord.Embed(
-            title="Error",
-            description=f"Sorry, I couldn't find enhancements for `{class_name}`. You dumbass bitch.",
-            color=discord.Color.red()
-        )
-        embed.set_thumbnail(url="https://i.imgur.com/T9lX2Nm.png")  # Add the logo here as well
-
+    embed = discord.Embed(
+        title="Command Updated",
+        description="Command is updated, use `/enhancement <class>`. Thank you.",
+        color=discord.Color.from_rgb(128, 0, 0)
+    )
+    embed.set_thumbnail(url="https://i.imgur.com/T9lX2Nm.png")
     await ctx.send(embed=embed)
 
 
