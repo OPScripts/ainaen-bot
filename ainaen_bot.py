@@ -18,7 +18,7 @@ async def nn_help(interaction: discord.Interaction):
         "- `!nn resetlist` – shows daily and weekly main todo list.\n"
         "- `!nn potionguide` – shows basic potions guide.\n"
         "- `!nn bossguide` – guide for daily boss / ultra boss (work in progress).\n"
-        "*Help us improve — share your suggestions with <@1052580900497534999>!*",
+        "*Help us improve — share your suggestions with <@1052580900497534999>*",
         ephemeral=True
     )
 
