@@ -38,7 +38,7 @@ async def enhancement_slash(interaction: discord.Interaction, class_name: str):
         embed.add_field(name="Weapon", value=data['weapon'], inline=False)
         embed.add_field(name="Helm", value=data['helm'], inline=False)
         embed.add_field(name="Cape", value=data['cape'], inline=False)
-        embed.set_footer(text="**Outdated?** Ask **MOD or **ADMIN** to update using /enhupdate")
+        embed.set_footer(text="OUTDATED? Ask a MOD or ADMIN to update using /enhupdate")
         embed.set_thumbnail(url="https://i.imgur.com/T9lX2Nm.png")
     else:
         embed = discord.Embed(
@@ -110,9 +110,9 @@ async def enhupdate_slash(
     embed.add_field(name="Helm", value=helm, inline=False)
     embed.add_field(name="Cape", value=cape, inline=False)
     embed.set_thumbnail(url="https://i.imgur.com/T9lX2Nm.png")
-    embed.set_footer(text="Changes are temporary and will reset on bot restart")
+    embed.set_footer(text="Changes are temporary and will reset on bot restart. So, ping who created this trash bot")
     
-    await interaction.response.send_message(embed=embed, ephemeral=True)
+    await interaction.response.send_message(embed=embed, ephemeral=False)
 
 @enhupdate_slash.autocomplete('class_name')
 async def enhupdate_class_autocomplete(
@@ -199,6 +199,13 @@ enhancements = {
         "weapon": "Valiance",
         "helm": "Vim",
         "cape": "Vainglory"
+    },
+    "blood titan": {
+        "purpose": "Here's your fucking blood titan",
+        "class": "Fighter",
+        "weapon": "Ravenous",
+        "helm": "Hearty <3 <3 <3 <3 ./.",
+        "cape": "Fighter"
     },
     "alpha omega": {
         "purpose": "Damage",
