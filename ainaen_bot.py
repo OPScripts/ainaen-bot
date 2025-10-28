@@ -131,7 +131,7 @@ async def enhupdate_class_autocomplete(
 async def enhupdate_error(interaction: discord.Interaction, error: app_commands.AppCommandError):
     if isinstance(error, app_commands.MissingPermissions):
         await interaction.response.send_message(
-            "You don't have permission to use this command. Requires 'Timeout Members' permission.",
+            "You don't have permission to use this command. Only Mod/Admins.",
             ephemeral=True
         )
 
